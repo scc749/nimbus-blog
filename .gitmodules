@@ -1,0 +1,8 @@
+[submodule "nimbus-blog-api"]
+	path = nimbus-blog-api
+	url = git@github.com:scc749/nimbus-blog-api.git
+	branch = main
+[submodule "nimbus-blog-web"]
+	path = nimbus-blog-web
+	url = git@github.com:scc749/nimbus-blog-web.git
+	branch = main
