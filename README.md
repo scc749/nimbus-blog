@@ -206,6 +206,25 @@ go build -o dist\migrate .\cmd\migrate
 
 ### 步骤 5：构建并运行后端容器
 
+后端镜像构建依赖二进制文件：`nimbus-blog-api/dist/nimbus-blog-api`（见 `deploy/backend/Dockerfile` 的 `COPY` 指令）。
+
+#### 5.1) 准备后端程序（Windows 编译并上传）
+
+```cmd
+set GOOS=linux
+set GOARCH=amd64
+set CGO_ENABLED=0
+cd nimbus-blog-api
+mkdir dist
+go build -o dist\nimbus-blog-api .\cmd\app
+```
+
+上传到服务器：
+
+- 上传 `dist/nimbus-blog-api` 到 `/srv/nimbus/nimbus-blog-api/dist/`
+
+#### 5.2) 构建并运行后端容器
+
 构建镜像（在 `/srv/nimbus` 仓库根执行）：
 
 ```bash
