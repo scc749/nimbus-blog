@@ -179,6 +179,7 @@ go build -o dist\migrate .\cmd\migrate
 在目录 `/srv/nimbus/nimbus-blog-api/` 执行迁移：
 
 ```bash
+chmod +x ./dist/migrate
 ./dist/migrate
 ```
 
