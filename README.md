@@ -132,6 +132,18 @@ minio:
   use_ssl: false
 ```
 
+文件存储对外访问地址（`file_storage.public_base_url`）：
+- 生产环境使用 MinIO 同域反代：配置为 `https://<服务器域名>/minio`
+- 使用自定义存储域名（CDN/对象存储网关域名）：配置为对应的自定义域名
+
+示例：
+
+```yaml
+file_storage:
+  provider: minio
+  public_base_url: https://<服务器域名>/minio
+```
+
 ### 步骤 4：执行数据库迁移（生产）
 
 迁移程序依赖两样东西：
